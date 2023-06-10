@@ -1,0 +1,63 @@
+<ion-app>
+  <ion-router-outlet>
+     <!----------------------------->
+     <!DOCTYPE html>
+ <ion-header>
+  <ion-toolbar class="ios hydrated">
+    <ion-title class="ios title-ios hydrated">Estoque</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list lines="full">
+    <form [formGroup]="formulario" (ngSubmit)="enviarFormulario()">
+      <!--     <ion-item>
+        <ion-label position="floating">Nome do produto</ion-label>
+        <ion-input formControlName="name" type="text" required></ion-input>
+      </ion-item>-->
+ 
+      <ion-item>
+        <ion-label position="floating">Nome do produto</ion-label>
+        <ion-input formControlName="name" type="text" required (input)="buscar()"></ion-input>
+       <!--<ion-input formControlName="name" type="text" required (input)="atualizarNomeProduto($event)"></ion-input>--> 
+      </ion-item>
+      
+        
+      <ion-item>
+        <ion-label position="floating">Descrição</ion-label>
+        <ion-input formControlName="desc" type="text" required>
+        </ion-input>
+      </ion-item>
+     
+      <ion-item>
+        <ion-label position="floating">Preço</ion-label>
+        <ion-input formControlName="price" type="text" required>
+        </ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Quantidade</ion-label>
+        <ion-input formControlName="quantidade" type="text" required>
+        </ion-input>
+      </ion-item>
+
+
+      <ion-row>
+        <ion-col>
+          <ion-button type="submit" color="primary" shape="full" expand="block">atualizar estoque</ion-button>
+        </ion-col>
+      </ion-row>
+    </form>
+  </ion-list>
+  <h1>nome do produto:{{mostrarDois?.nomeP}}</h1>
+  <h1>Descrição:{{mostrarDois?.descricaoP}}</h1>
+  <h1>Valor: {{mostrarDois?.valorP}}</h1>
+  <h1>Quantidade:{{mostrarDois?.quantidadeP}}</h1>
+  <h1>Quantidade:{{mostrarDois?.quantidadeP}}</h1>
+  
+</ion-content>
+
+<!----------------------------->
+
+  </ion-router-outlet>
+</ion-app>
+
